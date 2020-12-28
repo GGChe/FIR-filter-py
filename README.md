@@ -47,4 +47,8 @@ For filtering sample by sample:
 
 And you obtain something like this:
 
-![Figure_2](https://user-images.githubusercontent.com/16301652/101928475-ee7a5700-3bd5-11eb-9cdb-1f15a0c49a4d.png)
+![signa](https://user-images.githubusercontent.com/16301652/103227026-b4c38300-492d-11eb-99ea-334d0a0a11da.png)
+
+The frequency spectrum of the filtered signal is the following
+
+![fft](https://user-images.githubusercontent.com/16301652/103227030-b55c1980-492d-11eb-8a21-e12f11ff619f.png)
