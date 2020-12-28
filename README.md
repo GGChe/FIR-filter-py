@@ -1,43 +1,37 @@
 
-Realtime IIR filter implementation and benchmark in Python
+Realtime FIR filter implementation and benchmark in Python
 
 =======================================
 
 
-This is a project where you can create, test, evaluate IIR filters. Besides, an IIR filter class is provided to perform realtime
-processing of a signal. It was designed to achieve efficienc bu using only simple operations. 
+This is a project where you can create, test, evaluate FIR filters. Besides, an FIR filter class is provided to perform realtime
+processing of a signal. It was designed to achieve efficiency by using only simple operations. 
 
 Benchmark
 =========
 
-Here, it is possible to create 5 different IIR filters: Butterworth, Bessel, Chebyshev type I, Chebyshev type II, Eliptic. The benchmark is prepared so that you can configure the filter order, the attenuation and rejection band for the filter design and other parameters. 
+Here, an implementation of a simple FIR filter using python is provided. First, you might need to create and custom your own FIR filter by using firwin functions or other methods.  
 
-Real time Filtering implementation
-=======
-
-For the real time implementation of the system, an IIR class was designed and implemented. 
-
-Import
+Import the filter
 ======
 
-Use the command to import it:
+Use this command to import it:
 
-  import iir
+  import fir
 
 Calculate the coefficients
 ==========================
 
-You can extract yout filter coefficients from the IIR filter design benchmark and design file:
+You can extract yout filter coefficients from the FIR filter design benchmark and design file:
 
-    sos = signal.butter(order, [cutoff(s)], '[filter type]', output='sos')
-
+    b = signal.firwin(NTAPS,[f1/(fs*2) ,f2/(fs*2)], pass_zero = 'bandpass', fs = fs)
 
 Instantiate the filter
 ==================
 
-You can create an instance of the IIR filter by calling it:
+You can create an instance of the FIR filter by calling it:
 
-    f = iir.IIR_filter(sos)
+    myFIR = fir.FIR_filter(b, NTAPS)
 
 Filtering Flow
 ====
@@ -48,7 +42,7 @@ For filtering sample by sample:
 ````
   y = np.zeros(SAMPLES)
     for i in range(SAMPLES):
-       y[i] = myFilter.filter(mysignal[i])
+       y[i] = myFIR.dofilter(mysignal[i])
 ````
 
 And you obtain something like this:
