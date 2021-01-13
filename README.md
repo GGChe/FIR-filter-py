@@ -16,7 +16,7 @@ Calculate the coefficients
 
 You can extract yout filter coefficients from the FIR filter design benchmark and design file:
 ````
-    b = signal.firwin(NTAPS,[f1/(fs*2) ,f2/(fs*2)], pass_zero = 'bandpass', fs = fs)
+    coeff = signal.firwin(NTAPS,[f1/(fs*2) ,f2/(fs*2)], pass_zero = 'bandpass', fs = fs)
 ````
 In the design process, implementation requirements must be taken in accordance to which behaviour is required on your application. Here is where your expertise and knowledge about DSP come into play. I can provide some recommended literature to understand the world of digital signal processing:
 1. http://www.dspguide.com/
